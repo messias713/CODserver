@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrelas e Flores</title>
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 2px;
+            height: 2px;
+        }
+        .flower {
+            position: absolute;
+            background-color: yellow;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+<center><h1 style="color:pink;">Estrelas e flores divinas. O paraíso!</h1></center>
+</body>
+<script>
+    // Código JavaScript para criar estrelas e flores brilhando
+    function createStar() {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = Math.random() * window.innerHeight + 'px';
+    document.body.appendChild(star);
+}
+
+function createStars() {
+    for (let i = 0; i < 100; i++) {
+        createStar();
+    }
+}
+
+createStars();
+function createFlower() {
+    const flower = document.createElement('div');
+    flower.className = 'flower';
+    flower.style.left = Math.random() * window.innerWidth + 'px';
+    flower.style.top = Math.random() * window.innerHeight + 'px';
+    document.body.appendChild(flower);
+}
+
+function createFlowers() {
+    for (let i = 0; i < 50; i++) {
+        createFlower();
+    }
+}
+
+createFlowers();
+function moveFlowers() {
+    const flowers = document.getElementsByClassName('flower');
+    for (let flower of flowers) {
+        const randomX = Math.random() * 10 - 5; // Gera um valor aleatório entre -5 e 5 para movimento horizontal
+        const randomY = Math.random() * 10 - 5; // Gera um valor aleatório entre -5 e 5 para movimento vertical
+        const currentLeft = parseFloat(flower.style.left);
+        const currentTop = parseFloat(flower.style.top);
+        flower.style.left = currentLeft + randomX + 'px';
+        flower.style.top = currentTop + randomY + 'px';
+    }
+}
+
+setInterval(moveFlowers, 100); // Chama a função moveFlowers a cada 100 milissegundos (0.1 segundo)
+</script>
+</html>
+
