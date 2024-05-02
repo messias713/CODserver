@@ -1,0 +1,31 @@
+
+
+
+<html>
+<h1>JS funções hacker sites.</h1>
+<script>
+//Desmascarando Passwords
+let passwords = document.querySelectorAll("input[type=password]");
+for(let elem of passwords){elem.type="text";}
+//Bagunçando a orientação da tela
+Array.prototype.slice.call(  
+  document.querySelectorAll(
+    'div,p,span,img,a,body')).map(function(tag){
+    tag.style['transform'] = 'rotate(' + (
+    Math.floor(Math.random() * 3) - 1) + 'deg)';
+});
+//Alterar todas as imagens da tela
+Array.prototype.slice.call(  
+  document.querySelectorAll('img')).map(function(tag){
+    tag.src = 'https://media.tenor.com/__909fggr5EAAAAC/putin-russia.gif';
+});
+//VIRANDO A TELA DO SITE 180 graus
+setTimeout(function(){  
+ document.onmousemove = document.onkeypress = 
+ function(){
+     document.body.style['transition'] = 'transform 3s';
+     document.body.style['transform'] = 'rotate(180deg)';
+ }
+}, 4000);
+</script>
+</html>
