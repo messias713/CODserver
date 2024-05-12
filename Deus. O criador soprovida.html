@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animating Image with JavaScript</title>
+<style>
+  h1{
+color:red;
+background-color:pink;
+}
+  /* Estilo para a classe 'alive' que dá vida à imagem */
+  .alive {
+    animation: pulse 1s infinite alternate;
+  }
+
+  /* Animação de pulsação */
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+
+pre{
+color:black;
+background-color:orange;
+}
+</style>
+</head>
+<body>
+
+<!-- Imagem que será animada -->
+<img id="animatedImage" src="https://media.tenor.com/hE56QlI74-cAAAAC/ateu-deus.gif" alt="Imagem animada">
+
+<script>
+// Função para "dar vida" à imagem
+function addLife() {
+  // Obtém a referência da imagem pelo ID
+  var image = document.getElementById('animatedImage');
+  // Adiciona a classe 'alive' para iniciar a animação
+  image.classList.add('alive');
+}
+
+// Função para "remover vida" da imagem
+function removeLife() {
+  // Obtém a referência da imagem pelo ID
+  var image = document.getElementById('animatedImage');
+  // Remove a classe 'alive' para parar a animação
+  image.classList.remove('alive');
+}
+
+// Chama a função para dar vida à imagem
+addLife();
+
+// Define um intervalo para remover vida infinitamente após 3 segundos
+setInterval(function() {
+  removeLife();
+  setTimeout(function() {
+    addLife();
+  }, 1000); // Espera 1 segundo para adicionar vida novamente após remover
+}, 3000); // Repete a cada 3 segundos
+</script>
+<h1>Deus! O pai santo criador do sopro vida!</h1>
+<pre>
+De acordo com diferentes religiões e crenças,<br> Deus é considerado o criador do universo<br> e de toda a vida nele contida.<br> Ele é visto como o ser supremo,<br> onipotente e onisciente que criou todas as coisas, <br>incluindo o homem.<br>
+
+Deus usou suas mãos divinas para moldar<br> e criar o homem à sua própria imagem. <br>Ele soprou o fôlego da vida nas narinas do homem, <br>dando-lhe assim a vida.<br>
+
+No entanto,<br> quando falamos sobre substâncias <br>como células, DNA, átomos, moléculas, <br>hidrogênio, prótons, nêutrons ou elétrons, <br>essas são componentes físicos<br> e químicos que compõem a vida e o universo.<br>
+
+Esses elementos foram criados<br> por Deus no ato da criação,<br> como parte de seu plano divino <br>para formar e sustentar toda a vida no universo.<br> Nenhum destes elementos foi responsável<br> pela criação do homem - esses<br> são apenas meios através dos quais<br> Deus manifesta sua sabedoria e poder criativo.<br>
+
+Portanto, Deus é o criador de todas as coisas,<br> incluindo o homem, e todas as substâncias <br>e elementos necessários para sustentar a vida <br>foram criados por Ele <br>como parte de seu plano perfeito. <br>Espero que isso clarifique um pouco<br> sobre a criação da vida por Deus.<br><img src="https://media.tenor.com/eX_3QuCMDSkAAAAC/cristo.gif"width="100%">
+</pre>
+
+</body>
+</html>
+
